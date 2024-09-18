@@ -1,0 +1,156 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background: linear-gradient(to bottom, #87CEEB, #E0F6FF);
+    overflow: hidden;
+}
+
+.sun {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, #FFD700, #FFA500);
+    border-radius: 50%;
+    box-shadow: 0 0 50px #FFD700;
+    animation: pulse 5s infinite alternate;
+}
+
+.house {
+    width: 200px;
+    height: 200px;
+    background-color: #ff6b6b;
+    position: relative;
+    z-index: 1;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.roof {
+    width: 0;
+    height: 0;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    border-bottom: 100px solid #8b4513;
+    position: absolute;
+    top: -100px;
+}
+
+.bird {
+    position: absolute;
+    width: 30px;
+    height: 20px;
+    animation: fly 15s linear infinite;
+    z-index: 2;
+}
+
+.bird::before,
+.bird::after {
+    content: '';
+    position: absolute;
+    background: black;
+    width: 20px;
+    height: 2px;
+    top: 10px;
+}
+
+.bird::before {
+    left: 0;
+    transform: rotate(30deg);
+}
+
+.bird::after {
+    right: 0;
+    transform: rotate(-30deg);
+}
+
+@keyframes fly {
+    0% { 
+        left: -50px;
+        top: 15%;
+        transform: translateY(0px) scaleY(1);
+    }
+    25% {
+        transform: translateY(-15px) scaleY(0.9);
+    }
+    50% {
+        transform: translateY(0px) scaleY(1);
+    }
+    75% {
+        transform: translateY(15px) scaleY(0.9);
+    }
+    100% { 
+        left: calc(100% + 50px);
+        top: 15%;
+        transform: translateY(0px) scaleY(1);
+    }
+}
+
+.grass {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background: #228B22;
+}
+
+.mansion {
+    width: 300px;
+    height: 300px;
+    background-color: #e8d8b7;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 50px;
+    margin-left: 100px; /* Add this to move the mansion to the right */
+}
+
+.windows {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.windows::before, .windows::after {
+    content: '';
+    width: 60px;
+    height: 80px;
+    background-color: #87CEEB;
+    border: 5px solid #45283c;
+}
+
+.door {
+    width: 80px;
+    height: 120px;
+    background-color: #8b4513;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tree {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    z-index: 2; /* Increase z-index to ensure it's above the grass */
+}
+
+.tree-top {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid #228B22;
+}
+
+.tree-trunk {
+    width: 20px;
+    height: 50px;
+    background: #8B4513;
+    margin: 0 auto;
+}
