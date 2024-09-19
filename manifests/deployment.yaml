@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: flask-house-app
-        image: pramodhm/flask-house-app:v2
+        image: pramodhm/flask-house-app:v1
         resources:
           limits:
             cpu: "500m"
